@@ -1,21 +1,80 @@
-# Security Policy
+const http = require("http");
+const express = require("express");
+const app = express();
+app.get("/", (request, response) => {
+  response.sendStatus(200);
+});
+app.listen(process.env.PORT);
+setInterval(() => {
+  http.get(`http://اسم البروجكت.glitch.me/`);
+}, 280000);
 
-## Supported Versions
+// كل البكجات الي ممكن تحتجها في اي بوت
+const { Client, RichEmbed } = require("discord.js");
+var { Util } = require("discord.js");
+const { TOKEN, YT_API_KEY, prefix, devs } = require("./config");
+const client = new Client({ disableEveryone: true });
+const ytdl = require("ytdl-core");
+const canvas = require("canvas");
+const Canvas = require("canvas");
+const convert = require("hh-mm-ss");
+const fetchVideoInfo = require("youtube-info");
+const botversion = require("./package.json").version;
+const simpleytapi = require("simple-youtube-api");
+const moment = require("moment");
+const fs = require("fs");
+const util = require("util");
+const gif = require("gif-search");
+const opus = require("node-opus");
+const ms = require("ms");
+const jimp = require("jimp");
+const { get } = require("snekfetch");
+const guild = require("guild");
+const dateFormat = require("dateformat"); //npm i dateformat
+const YouTube = require("simple-youtube-api");
+const youtube = new YouTube("AIzaSyAdORXg7UZUo7sePv97JyoDqtQVi3Ll0b8");
+const hastebins = require("hastebin-gen");
+const getYoutubeID = require("get-youtube-id");
+const yt_api_key = "AIzaSyDeoIH0u1e72AtfpwSKKOSy3IPp2UHzqi4";
+const pretty = require("pretty-ms");
 
-Use this section to tell people about which versions of your project are
-currently being supported with security updates.
+const queue = new Map();
+var table = require("table").table;
+const Discord = require("discord.js");
+client.on("ready", () => {
+  console.log(`Logged in as ${client.user.tag}!`);
+});
 
-| Version | Supported          |
-| ------- | ------------------ |
-| 5.1.x   | :white_check_mark: |
-| 5.0.x   | :x:                |
-| 4.0.x   | :white_check_mark: |
-| < 4.0   | :x:                |
+//كود برودكاست
 
-## Reporting a Vulnerability
+client.on("message", message => {
+  if (message.content.startsWith(prefix + "bc")) {
+    if (!message.member.hasPermission("ADMINISTRATOR")) return;
+    let args = message.content.split(" ").slice(1);
+    var argresult = args.join(" ");
+    message.guild.members
+      .filter(m => m.presence.status !== "offline")
+      .forEach(m => {
+        m.send(`${argresult}\n ${m}`);
+      });
+    message.channel.send(
+      `\`${
+        message.guild.members.filter(m => m.presence.status !== "online").size
+      }\` : عدد الاعضاء المستلمين`
+    );
+    message.delete();
+  }
+});
 
-Use this section to tell people how to report a vulnerability.
-
-Tell them where to go, how often they can expect to get an update on a
-reported vulnerability, what to expect if the vulnerability is accepted or
-declined, etc.
+client.on("ready", () => {
+  console.log(`----------------`);
+  console.log(`Desert Bot- Script By : osama tech`);
+  console.log(`----------------`);
+  console.log(
+    `ON ${client.guilds.size} Servers '     Script By : osama tech ' `
+  );
+  console.log(`----------------`);
+  console.log(`Logged in as ${client.user.tag}!`);
+  client.user.setGame(`hello`, "http://twitch.tv/S-F");
+  client.user.setStatus("dnd");
+});
