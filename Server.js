@@ -6,10 +6,9 @@ app.get("/", (request, response) => {
 });
 app.listen(process.env.PORT);
 setInterval(() => {
-  http.get(`http://اسم البروجكت.glitch.me/`);
+  http.get(`http://brodt2.glitch.me/`);
 }, 280000);
 
-// كل البكجات الي ممكن تحتجها في اي بوت
 const { Client, RichEmbed } = require("discord.js");
 var { Util } = require("discord.js");
 const { TOKEN, YT_API_KEY, prefix, devs } = require("./config");
@@ -37,7 +36,7 @@ const hastebins = require("hastebin-gen");
 const getYoutubeID = require("get-youtube-id");
 const yt_api_key = "AIzaSyDeoIH0u1e72AtfpwSKKOSy3IPp2UHzqi4";
 const pretty = require("pretty-ms");
-
+client.login(TOKEN);
 const queue = new Map();
 var table = require("table").table;
 const Discord = require("discord.js");
@@ -45,10 +44,10 @@ client.on("ready", () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
 
-//كود برودكاست
-
+//////كۆدی ڕیکلام
+/////ARBELE
 client.on("message", message => {
-  if (message.content.startsWith(prefix + "bc")) {
+  if (message.content.startsWith(prefix + "+bc")) {
     if (!message.member.hasPermission("ADMINISTRATOR")) return;
     let args = message.content.split(" ").slice(1);
     var argresult = args.join(" ");
@@ -60,7 +59,7 @@ client.on("message", message => {
     message.channel.send(
       `\`${
         message.guild.members.filter(m => m.presence.status !== "online").size
-      }\` : عدد الاعضاء المستلمين`
+      }\` : نێردرا بۆ میمبەرەکان`
     );
     message.delete();
   }
@@ -68,13 +67,11 @@ client.on("message", message => {
 
 client.on("ready", () => {
   console.log(`----------------`);
-  console.log(`Desert Bot- Script By : osama tech`);
+  console.log(`Desert Bot- Script By : ARBELE`);
   console.log(`----------------`);
-  console.log(
-    `ON ${client.guilds.size} Servers '     Script By : osama tech ' `
-  );
+  console.log(`ON ${client.guilds.size} Servers '     Script By : ARBELE ' `);
   console.log(`----------------`);
   console.log(`Logged in as ${client.user.tag}!`);
-  client.user.setGame(`hello`, "http://twitch.tv/S-F");
+  client.user.setGame(`hello`, "http://twitch.tv/S-F"); //  تعديل مهم
   client.user.setStatus("dnd");
 });
