@@ -67,9 +67,9 @@ client.on("message", message => {
 
 client.on("ready", () => {
   console.log(`----------------`);
-  console.log(`Desert Bot- Script By : ARBELE`);
+  console.log(`Desert Bot- Script By : Xalo`);
   console.log(`----------------`);
-  console.log(`ON ${client.guilds.size} Servers '     Script By : ARBELE ' `);
+  console.log(`ON ${client.guilds.size} Servers '     Script By : Xalo ' `);
   console.log(`----------------`);
   console.log(`Logged in as ${client.user.tag}!`);
   client.user.setGame(`hello`, "http://twitch.tv/S-F"); //  تعديل مهم
